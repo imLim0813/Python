@@ -17,7 +17,11 @@ NEWSPIDER_MODULE = "ecommerce.spiders"
 #USER_AGENT = "ecommerce (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+FEED_EXPORT_ENCODING = "utf-8"
+LOG_FILE = "log.txt"
+DUPEFILTER_CLASS = "scrapy.dupefilters.BaseDupeFilter"
+FEED_EXPORT_FIELDS = ['main_category_name', 'sub_category_name', 'ranking', 'title', 'orig_price', 'discount_price', 'discount_percent']
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -90,4 +94,3 @@ ROBOTSTXT_OBEY = True
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-FEED_EXPORT_ENCODING = "utf-8"
